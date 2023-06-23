@@ -246,6 +246,9 @@ img[alt="loader"] {
 	background-color: #ff7900;
 }
 
+.customers {
+	max-height: 175px;
+}
 .customers.none {
 	display: none;
 }
@@ -260,6 +263,9 @@ img[alt="loader"] {
 	width: 100%;
 	border-radius: 5px;
 	max-height: 120px;
+}
+.slick-slide img:hover {
+	opacity: 0.85;
 }
 .slick-slide p {
 	float: right;
