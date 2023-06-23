@@ -33,12 +33,22 @@ $(document).on('click', '#get', function(e) {
     let normal = document.getElementById('normal').checked;
     document.getElementById('get').disabled = true;
     $('#get').html('درحال دریافت ...');
+    $('#result').addClass('none');
+    $('#result textarea').html('');
+    $('#customers').addClass('none');
+    $('#slider').html('');
     let config = "";
+    let channel = {};
     if ( normal ) {
         let i = 0;
         jQuery.get('https://raw.githubusercontent.com/'+source+'/main/json/configs.json?v1.'+Date.now(), function(data) {
             data = JSON.parse(data);
             jQuery.each(data, function(index, item) {
+                channel[item.channel.username] = {
+                    title: item.channel.title,
+                    username: item.channel.username,
+                    logo: item.channel.logo,
+                };
                 if ( type !== 'mix' ) {
                     if ( type !== item.type ) {
                         return;
@@ -59,20 +69,62 @@ $(document).on('click', '#get', function(e) {
             $('#get').html('دریافت کانفیگ');
             $('#result').removeClass('none');
             $('#result textarea').html(config);
+            generateCarousel(channel);
+            $('#customers').removeClass('none');
         })
         .fail(function() {
             document.getElementById('get').disabled = false;
             $('#get').html('دریافت کانفیگ');
             $('#result').addClass('none');
             $('#result textarea').html('');
+            $('#customers').addClass('none');
+            $('#slider').html('');
         });
     }
     else {
         document.getElementById('get').disabled = false;
         $('#get').html('دریافت کانفیگ');
         type = (type === 'ss' ? 'shadowsocks' : type);
-        config = 'https://raw.githubusercontent.com/'+source+'/main/sub/'+type;
+        config = 'https://raw.githubusercontent.com/'+source+'/main/sub/'+type+'_base64';
         $('#result').removeClass('none');
         $('#result textarea').html(config);
+        $('#customers').addClass('none');
+        $('#slider').html('');
     }
+});
+
+function generateCarousel(channel) {
+    let carousel = "";
+    jQuery.each(channel, function(index, item) {
+        carousel += '<a href="https://t.me/'+item.username+'" title="'+item.title+'" target="_blank">';
+        carousel += '<div class="slide">';
+        carousel += '<img src="'+item.logo+'">';
+        carousel += '<p dir="auto">'+item.title+'</p>';
+        carousel += '</div>';
+        carousel += '</a>';
+    });
+    $('#slider').html(carousel).slick('refresh');
+}
+
+window.addEventListener('load', function() {
+    $('#slider').slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 1500,
+        arrows: false,
+        dots: false,
+        pauseOnHover: true,
+        responsive: [{
+            breakpoint: 768,
+            settings: {
+                slidesToShow: 5
+            }
+        }, {
+            breakpoint: 520,
+            settings: {
+                slidesToShow: 3
+            }
+        }]
+    });
 });

@@ -4,7 +4,7 @@
         <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
         <link href="./assets/css/bootstrap-rtl.min.css" rel="stylesheet" />
         <link href="./assets/css/vazir.css" rel="stylesheet" />
-        <link href="./assets/css/style.css?v1.0" rel="stylesheet" />
+        <link href="./assets/css/style.css?v1.1" rel="stylesheet" />
         <title>IRCF | کانفیگ رایگان</title>
         <meta name="description" content="آی پی سالم و تمیز برای کلودفلر (کلادفلر) جهت دسترسی به اینترنت آزاد" />
         <meta name="keywords" content="کلودفلر, کلادفلر, cloudflare, cf, آی پی تمیز, آی پی سالم, اسکن آی پی" />
@@ -13,7 +13,8 @@
         <meta name="theme-color" content="#ff7900" />
         <script src="./assets/js/jquery.min.js"></script>
         <script src="./assets/js/bootstrap.min.js"></script>
-        <script src="./assets/js/script.js?v1.0.1"></script>
+        <script src="./assets/js/slick-carousel_1.6.0.js"></script>
+        <script src="./assets/js/script.js?v1.1"></script>
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         <meta charset="UTF-8" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -89,6 +90,12 @@
                     <textarea class="form-control dirLeft"></textarea>
                     <div class="clearfix"></div>
                     <div class="btn btn-link btn-xs" id="copy">کپی کانفیگ</div>
+                    <div class="clearfix"></div>
+                    <div class="alert alert-warning customers" id="customers">
+                        <small class="label label-warning">تامین‌کنندگان</small>
+                        <div class="clearfix"></div>
+                        <div class="customer-logos slider" id="slider"></div>
+                    </div>
                 </div>
                 <br>
                 <div id="donate" class="modal fade" role="dialog">
@@ -142,11 +149,6 @@
                         به کمک
                         <a href="https://github.com/yebekhe/TelegramV2rayCollector" target="_blank">YeBeKhe</a>
                     </p>
-                    <script>
-                        window.addEventListener('load', function() {
-                            //$('#defConfig').trigger('keyup')
-                        });
-                    </script>
                     <div class="text-center">
                         <a href="#" class="btn btn-link btn-normal btn-lg btn-outline donateLink" data-toggle="modal" data-target="#donate">☕</a>
                     </div>
