@@ -3,8 +3,8 @@
 
 https://ircf.space
 
-دریافت کانفیگ:\
-https://ircfspace.github.io/tconfig/
+دریافت کانفیگ رایگان:\
+https://ircfspace.github.io/tconfig
 
 گردآوری‌شده از طریق:\
 https://github.com/yebekhe/ConfigCollector
