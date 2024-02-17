@@ -1,0 +1,295 @@
+body {
+	font: 14px vazir;
+	padding: 85px 0 0 0;
+}
+input,
+select,
+textarea {
+	direction: rtl;
+	text-align: right;
+	margin: 10px 0;
+	width: 100%;
+	resize: none;
+}
+button {
+	width: 100%;
+}
+
+p {
+	font-size: 15px;
+	line-height: 27px;
+}
+ul li {
+	font-size: 15px;
+	line-height: 27px;
+}
+
+.navbar {
+	float: right;
+	width: 100%;
+	border-radius: 0;
+	background-color: #ff7900;
+	border: none;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.15);
+	padding: 22px 0;
+	margin: 0 0 30px 0;
+	position: fixed;
+	top: 0;
+	right: 0;
+	z-index: 100;
+}
+.navbar img {
+	float: right;
+	width: 32px;
+	height: 15px;
+	margin: 0 0 0 15px;
+}
+.navbar h1 {
+	float: right;
+	margin: 0;
+	color: #ffffff;
+	font-size: 17px;
+	padding: 0;
+}
+
+.col-centered {
+	float: none;
+	margin: 0 auto;
+}
+.col-centered h3 {
+	font-size: 22px;
+	margin: 20px 0;
+}
+
+.input-group {
+	float: right !important;
+	width: 100%;
+}
+.input-group input {
+	width: 45% !important;
+	float: right;
+	margin: 0;
+}
+.input-group select {
+	width: 30% !important;
+	float: right;
+	margin: 0;
+}
+.input-group .input-group-btn {
+	width: 25% !important;
+	float: left;
+}
+.input-group .input-group-btn button {
+	width: 100% !important;
+}
+
+.dirLeft {
+	direction: ltr;
+	text-align: left;
+}
+
+.alert {
+	margin: 20px 0;
+}
+.alert em {
+	font-style: normal;
+}
+
+.table {
+	margin: 0;
+}
+.table tr:first-child td {
+	border-top: none;
+}
+.table td em {
+	font-style: normal;
+}
+
+.nav-pills {
+	margin: 0 0 12px 0;
+}
+.nav-pills>li a {
+	padding: 2px 7px;
+	font-size: 12px;
+	border-radius: 25px;
+	color: #454545;
+}
+.nav-pills>li a:focus,
+.nav-pills>li a:hover,
+.nav-pills>li.active a,
+.nav-pills>li.active a:focus,
+.nav-pills>li.active a:hover {
+	background-color: #939393;
+	color: #fff;
+}
+
+.scanner select {
+	width: 40%!important;
+	height: 34px;
+}
+.scanner .input-group-addon {
+	width: 40%!important;
+	float: right;
+	text-align: center;
+	height: 34px;
+	padding-right: 0;
+	padding-left: 0;
+	border-color: #ccc;
+}
+.scanner input {
+	width: 20%!important;
+	padding-right: 3px;
+	padding-left: 3px;
+	text-align: center;
+}
+.scanner .input-group-btn {
+	width: 20%!important;
+}
+
+.modalBodyOverflow {
+	max-height: 63vh;
+	overflow: hidden;
+	overflow-y: auto;
+}
+
+img[alt="loader"] {
+	width: 15px;
+	height: 10px;
+	transform: rotate(180deg);
+}
+
+.table .copyItem {
+	cursor: copy;
+}
+
+.betaVersion {
+	float: right;
+	width: 100%;
+	margin: 10px 0 0 0;
+}
+.betaVersion.rangeSelector {
+	margin: 0 0 5px 0;
+}
+.betaVersion.rangeSelector .clearfix {
+	display: none;
+}
+.betaVersion input[type="checkbox"],
+.betaVersion input[type="radio"] {
+	float: right;
+	width: 15px;
+	height: 15px;
+	margin: 3px 0 0 10px;
+}
+.betaVersion label {
+	float: right;
+	font-weight: normal;
+	cursor: pointer;
+}
+.betaVersion.rangeSelector label {
+	margin-left: 20px;
+}
+
+.none {
+	display: none;
+}
+
+.fullBox {
+	float: right;
+	width: 100%;
+	position: relative;
+	margin: 20px 0;
+}
+.fullBox .rightSide {
+	float: right;
+	width: 160px;
+}
+.fullBox .rightSide img {
+	width: 100%;
+	height: 100%;
+	border: 1px solid #cbcbcb;
+	border-radius: 5px;
+}
+.fullBox .leftSide {
+	float: left;
+	width: calc(100% - 170px);
+}
+.fullBox .leftSide textarea {
+	height: 160px;
+	margin: 0;
+}
+.fullBox .leftSide textarea[readonly] {
+	background: #fff;
+}
+
+.form-group {
+	float: right;
+	width: 100%;
+}
+.form-group .form-control {
+	width: 49%;
+	float: right;
+	margin: 0;
+}
+.form-group .form-control:first-child {
+	width: 49%;
+}
+.form-group .form-control:last-child {
+	float: left;
+}
+
+.dropdown-menu {
+	right: -2px;
+}
+.dropdown-menu>.active>a,
+.dropdown-menu>.active>a:focus,
+.dropdown-menu>.active>a:hover {
+	background-color: #ff7900;
+}
+
+footer {
+	padding: 10px 0;
+	/*position: fixed;
+	bottom: 0;
+	right: 0;*/
+	float: right;
+	width: 100%;
+	line-height: 20px;
+}
+footer p {
+	float: right;
+	width: 100%;
+	text-align: center;
+	font-size: 13px;
+}
+
+@media(max-width:700px) {
+	body,
+	.container {
+		padding-right: 0;
+		padding-left: 0;
+	}
+	.fullBox .rightSide {
+		width: 50%;
+		padding-left: 10px;
+	}
+	.fullBox .leftSide {
+		width: 50%;
+	}
+	.fullBox .leftSide textarea {
+		height: 255px;
+	}
+}
+
+@media(max-width:500px) {
+	.fullBox .rightSide {
+		width: 100%;
+		padding-left: 0;
+	}
+	.fullBox .leftSide {
+		width: 100%;
+	}
+	.fullBox .leftSide textarea {
+		margin-top: 10px;
+		height: 70px;
+	}
+}
