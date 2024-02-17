@@ -25,7 +25,7 @@ $(document).on('change', '#type, #total', function(e) {
     $('#get').trigger('click');
 });
 
-let source = 'yebekhe/TelegramV2rayCollector';
+let source = 'yebekhe/ConfigCollector';
 $(document).on('click', '#get', function(e) {
     e.preventDefault();
     let type = $('#type').val();
