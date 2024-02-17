@@ -87,7 +87,8 @@ $(document).on('click', '#get', function(e) {
         document.getElementById('get').disabled = false;
         $('#get').html('دریافت کانفیگ');
         //type = (type === 'ss' ? 'shadowsocks' : type);
-        config = 'https://raw.githubusercontent.com/'+source+'/main/subscriptions/xray/normal/'+type;
+        //config = 'https://raw.githubusercontent.com/'+source+'/main/subscriptions/xray/normal/'+type;
+        config = 'https://raw.githubusercontent.com/ircfspace/tvc/main/sub/'+type;
         $('#result').removeClass('none');
         $('#result textarea').html(config);
         $('#customers').addClass('none');
