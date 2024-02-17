@@ -259,6 +259,7 @@ img[alt="loader"] {
 .slick-slide img {
 	width: 100%;
 	border-radius: 5px;
+	max-height: 120px;
 }
 .slick-slide p {
 	float: right;
