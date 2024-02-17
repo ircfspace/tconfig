@@ -25,7 +25,7 @@ $(document).on('change', '#type, #total', function(e) {
     $('#get').trigger('click');
 });
 
-let source = 'yebekhe/ConfigCollector';
+let source = 'yebekhe/TVC';
 $(document).on('click', '#get', function(e) {
     e.preventDefault();
     let type = $('#type').val();
@@ -41,7 +41,7 @@ $(document).on('click', '#get', function(e) {
     let channel = {};
     if ( normal ) {
         let i = 0;
-        jQuery.get('https://raw.githubusercontent.com/'+source+'/main/json/configs.json?v1.'+Date.now(), function(data) {
+        jQuery.get('https://raw.githubusercontent.com/'+source+'/main/api/allConfigs.json?v1.'+Date.now(), function(data) {
             data = JSON.parse(data);
             jQuery.each(data, function(index, item) {
                 channel[item.channel.username] = {
@@ -67,10 +67,12 @@ $(document).on('click', '#get', function(e) {
             });
             document.getElementById('get').disabled = false;
             $('#get').html('دریافت کانفیگ');
-            $('#result').removeClass('none');
-            $('#result textarea').html(config);
-            generateCarousel(channel);
-            $('#customers').removeClass('none');
+            if ( config !== '' ) {
+                $('#result').removeClass('none');
+                $('#result textarea').html(config);
+                generateCarousel(channel);
+                $('#customers').removeClass('none');
+            }
         })
         .fail(function() {
             document.getElementById('get').disabled = false;
@@ -84,8 +86,8 @@ $(document).on('click', '#get', function(e) {
     else {
         document.getElementById('get').disabled = false;
         $('#get').html('دریافت کانفیگ');
-        type = (type === 'ss' ? 'shadowsocks' : type);
-        config = 'https://raw.githubusercontent.com/'+source+'/main/sub/'+type+'_base64';
+        //type = (type === 'ss' ? 'shadowsocks' : type);
+        config = 'https://raw.githubusercontent.com/'+source+'/main/subscriptions/xray/normal/'+type;
         $('#result').removeClass('none');
         $('#result textarea').html(config);
         $('#customers').addClass('none');
