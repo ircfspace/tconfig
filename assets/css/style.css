@@ -146,6 +146,32 @@ ul li {
 	width: 20%!important;
 }
 
+.modal-header .close {
+    float: right;
+    width: auto;
+    margin: 0px 0 -7px 0;
+    font-size: 30px;
+}
+.modal-footer button {
+    float: right;
+    width: 50%;
+    margin-right: 0!important;
+    margin-bottom: 5px!important;
+}
+.modal-footer button:nth-child(odd) {
+    margin-left: 5px!important;
+}
+.modal-footer button:nth-child(even) {
+    width: calc(50% - 5px)
+}
+.modal-body .alert {
+    margin: 0;
+}
+.qrcode img {
+    width: 100%;
+    height: auto;
+}
+
 .modalBodyOverflow {
 	max-height: 63vh;
 	overflow: hidden;

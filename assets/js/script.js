@@ -36,10 +36,19 @@ $(document).on('click', '#get', function(e) {
     $('#result').addClass('none');
     $('#result textarea').html('');
     $('#customers').addClass('none');
+    $('#result #qrCode').addClass('none');
     $('#slider').html('');
     let config = "";
     let channel = {};
     if ( normal ) {
+        if ( type === 'warp' ) {
+            config += "warp://auto#WarpInWarp ⭐️&&detour=warp://auto#Warp 🇮🇷";
+            $('#result').removeClass('none');
+            $('#get').html('دریافت کانفیگ');
+            document.getElementById('get').disabled = false;
+            $('#result textarea').html(config);
+            return false;
+        }
         let i = 0;
         jQuery.get('https://raw.githubusercontent.com/'+source+'/main/api/allConfigs.json?v1.'+Date.now(), function(data) {
             data = JSON.parse(data);
@@ -88,12 +97,27 @@ $(document).on('click', '#get', function(e) {
         $('#get').html('دریافت کانفیگ');
         //type = (type === 'ss' ? 'shadowsocks' : type);
         //config = 'https://raw.githubusercontent.com/'+source+'/main/subscriptions/xray/normal/'+type;
-        config = 'https://raw.githubusercontent.com/ircfspace/tvc/main/sub/'+type;
-        $('#result').removeClass('none');
-        $('#result textarea').html(config);
-        $('#customers').addClass('none');
-        $('#slider').html('');
+        if ( type === "warp" ) {
+            config = 'https://raw.githubusercontent.com/ircfspace/warpsub/main/export/warp';
+        }
+        else {
+            config = 'https://raw.githubusercontent.com/ircfspace/tvc/main/sub/'+type;
+        }
+        $('#qrcode img').attr('src', "https://quickchart.io/qr/?size=300x200&light=ffffff&text="+encodeURIComponent(config));
+        $('#qrModal h4').html('QRCode ('+type+')');
+        $('#qrcode input').val(config);
+        $("#qrModal").modal('show');
     }
+});
+
+$(document).on('click', '#copyFromQR, #copyUrl', function (e) {
+    e.preventDefault();
+    const input = document.getElementById('subUrl');
+    input.select();
+    input.setSelectionRange(0, 99999);
+    document.execCommand('copy');
+    $("#qrModal").modal('hide');
+    alert('آدرس در کلیپ‌بورد کپی شد.');
 });
 
 function generateCarousel(channel) {

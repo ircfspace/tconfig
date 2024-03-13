@@ -4,17 +4,13 @@
         <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
         <link href="./assets/css/bootstrap-rtl.min.css" rel="stylesheet" />
         <link href="./assets/css/vazir.css" rel="stylesheet" />
-        <link href="./assets/css/style.css?v1.1.2" rel="stylesheet" />
+        <link href="./assets/css/style.css?v1.4" rel="stylesheet" />
         <title>IRCF | کانفیگ رایگان</title>
         <meta name="description" content="آی پی سالم و تمیز برای کلودفلر (کلادفلر) جهت دسترسی به اینترنت آزاد" />
         <meta name="keywords" content="کلودفلر, کلادفلر, cloudflare, cf, آی پی تمیز, آی پی سالم, اسکن آی پی" />
         <meta name="robots" content="index,follow,noodp" />
         <meta name="googlebot" content="index,follow" />
         <meta name="theme-color" content="#ff7900" />
-        <script src="./assets/js/jquery.min.js"></script>
-        <script src="./assets/js/bootstrap.min.js"></script>
-        <script src="./assets/js/slick-carousel_1.6.0.js"></script>
-        <script src="./assets/js/script.js?v1.3"></script>
         <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
         <meta charset="UTF-8" />
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -70,6 +66,7 @@
                         <option value="hy2">کانفیگ HYSTERIA2</option>
                         <option value="trojan">کانفیگ TROJAN</option>
                         <option value="tuic">کانفیگ TUIC</option>
+                        <option value="warp">کانفیگ WARP</option>
                     </select>
                     <select class="form-control" id="total">
                         <option value="10">حداکثر ۱۰ مورد</option>
@@ -144,6 +141,27 @@
                         </div>
                     </div>
                 </div>
+                <div id="qrModal" class="modal fade" role="dialog">
+                    <div class="modal-dialog modal-sm">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <button type="button" class="close pull-right" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title dirLeft">QRCode</h4>
+                            </div>
+                            <div class="modal-body">
+                                <div class="qrcode" id="qrcode">
+                                    <a href="javascript:;" id="copyFromQR">
+                                        <img src="" alt="qrcode" />
+                                    </a>
+                                    <input id="subUrl" class="form-control dirLeft" value="" />
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" id="copyUrl">کپی آدرس</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <footer>
                     <p class="text-center">
                         © توسط
@@ -154,6 +172,10 @@
                     <!--<div class="text-center">
                         <a href="#" class="btn btn-link btn-normal btn-lg btn-outline donateLink" data-toggle="modal" data-target="#donate">☕</a>
                     </div>-->
+                    <script src="./assets/js/jquery.min.js"></script>
+                    <script src="./assets/js/bootstrap.min.js"></script>
+                    <script src="./assets/js/slick-carousel_1.6.0.js"></script>
+                    <script src="./assets/js/script.js?v1.4"></script>
                 </footer>
             </div>
         </div>
