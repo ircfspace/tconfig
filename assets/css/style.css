@@ -109,7 +109,7 @@ ul li {
 	margin: 0 0 12px 0;
 }
 .nav-pills>li a {
-	padding: 2px 7px;
+	padding: 0 7px;
 	font-size: 12px;
 	border-radius: 25px;
 	color: #454545;
@@ -259,6 +259,7 @@ img[alt="loader"] {
 .form-group .form-control:first-child {
 	width: 49%;
 }
+.form-group .form-control:nth-child(2),
 .form-group .form-control:last-child {
 	float: left;
 }

@@ -1,10 +1,12 @@
 $(document).on('click', '#normal, #sub', function(e) {
     let normal = document.getElementById('normal').checked;
     if ( normal ) {
-        $('#total').removeAttr('disabled').val('25');
+        $('#total').val('25').removeClass('none');
+        $('#limit').addClass('none');
     }
     else {
-        $('#total').attr('disabled', 'disabled').val('all');
+        $('#total').val('all').addClass('none');
+        $('#limit').removeClass('none');
     }
 });
 
@@ -25,11 +27,17 @@ $(document).on('change', '#type, #total', function(e) {
     $('#get').trigger('click');
 });
 
+$(document).on('change', '#type, #limit', function(e) {
+    e.preventDefault();
+    $('#get').trigger('click');
+});
+
 let source = 'yebekhe/TVC';
 $(document).on('click', '#get', function(e) {
     e.preventDefault();
     let type = $('#type').val();
     let total = $('#total').val();
+    let limit = $('#limit').val();
     let normal = document.getElementById('normal').checked;
     document.getElementById('get').disabled = true;
     $('#get').html('درحال دریافت ...');
@@ -101,7 +109,7 @@ $(document).on('click', '#get', function(e) {
             config = 'https://raw.githubusercontent.com/ircfspace/warpsub/main/export/warp';
         }
         else {
-            config = 'https://raw.githubusercontent.com/ircfspace/tvc/main/sub/'+type;
+            config = 'https://raw.githubusercontent.com/'+source+'/main/'+(limit === 'lite' ? 'lite/' : '')+'subscriptions/xray/normal/'+type;
         }
         $('#qrcode img').attr('src', "https://quickchart.io/qr/?size=300x200&light=ffffff&text="+encodeURIComponent(config));
         $('#qrModal h4').html('QRCode ('+type+')');
@@ -123,12 +131,14 @@ $(document).on('click', '#copyFromQR, #copyUrl', function (e) {
 function generateCarousel(channel) {
     let carousel = "";
     jQuery.each(channel, function(index, item) {
-        carousel += '<a href="https://t.me/'+item.username+'" title="'+item.title+'" target="_blank">';
-        carousel += '<div class="slide">';
-        carousel += '<img src="'+item.logo+'">';
-        carousel += '<p dir="auto">'+item.title+'</p>';
-        carousel += '</div>';
-        carousel += '</a>';
+        if (typeof item !== "undefined" && (item.title !== null || item.logo !== null)) {
+            carousel += '<a href="https://t.me/'+item.username+'" title="'+item.title+'" target="_blank">';
+            carousel += '<div class="slide">';
+            carousel += '<img src="'+item.logo+'">';
+            carousel += '<p dir="auto">'+item.title+'</p>';
+            carousel += '</div>';
+            carousel += '</a>';
+        }
     });
     $('#slider').html(carousel).slick('refresh');
 }
