@@ -32,7 +32,7 @@ $(document).on('change', '#type, #limit', function(e) {
     $('#get').trigger('click');
 });
 
-let source = 'yebekhe/TVC';
+let source = 'itsyebekhe/HiN-VPN';
 $(document).on('click', '#get', function(e) {
     e.preventDefault();
     let type = $('#type').val();
@@ -109,7 +109,8 @@ $(document).on('click', '#get', function(e) {
             config = 'https://raw.githubusercontent.com/ircfspace/warpsub/main/export/warp';
         }
         else {
-            config = 'https://raw.githubusercontent.com/'+source+'/main/'+(limit === 'lite' ? 'lite/' : '')+'subscriptions/xray/normal/'+type;
+            //config = 'https://raw.githubusercontent.com/'+source+'/main/'+(limit === 'lite' ? 'lite/' : '')+'subscriptions/xray/normal/'+type;
+            config = 'https://raw.githubusercontent.com/'+source+'/main/subscription/normal/'+type;
         }
         $('#qrcode img').attr('src', "https://quickchart.io/qr/?size=300x200&light=ffffff&text="+encodeURIComponent(config));
         $('#qrModal h4').html('QRCode ('+type+')');

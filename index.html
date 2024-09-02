@@ -43,7 +43,7 @@
                 </ul>
                 <div class="clearfix"></div>
                 <div class="alert alert-info" id="defAlert">
-                    <p>توسط این‌ابزار می‌تونین به کانفیگ‌های رایگان گردآوری‌شده از طریق <a href="https://github.com/yebekhe/TVC" target="_blank">TVC</a> دسترسی داشته باشین. این‌کانفیگ‌ها به‌صورت خودکار و منظم، بدون دخل‌وتصرف از یه‌سری <a href="https://raw.githubusercontent.com/yebekhe/TVC/main/channelsData/channelsAssets.json" target="_blank">کانال تلگرامی</a> جمع‌آوری میشن و برای رعایت مسائل امنیتی توصیه میشه تنها برای مصارف عادی ازشون استفاده کنین.</p>
+                    <p>توسط این‌ابزار می‌تونین به کانفیگ‌های رایگان گردآوری‌شده از طریق <a href="https://github.com/itsyebekhe/HiN-VPN" target="_blank">HiN-VPN</a> دسترسی داشته باشین. این‌کانفیگ‌ها به‌صورت خودکار و منظم، بدون دخل‌وتصرف از یه‌سری <a href="https://raw.githubusercontent.com/itsyebekhe/HiN-VPN/main/source.conf" target="_blank">کانال تلگرامی</a> جمع‌آوری میشن و برای رعایت مسائل امنیتی توصیه میشه تنها برای مصارف عادی ازشون استفاده کنین.</p>
                 </div>
                 <ul class="nav nav-pills">
                     <li class="active"><a href="https://ircfspace.github.io/tconfig/">پروتکل‌ها</a></li>
@@ -52,31 +52,31 @@
                 <div class="form-group">
                     <select class="form-control" id="type">
                         <option value="mix">همه‌نوع کانفیگ</option>
-                        <option value="reality">کانفیگ REALITY</option>
+                        <!-- <option value="reality">کانفیگ REALITY</option> -->
                         <option value="vless">کانفیگ VLESS</option>
                         <option value="vmess">کانفیگ VMESS</option>
                         <option value="ss">کانفیگ SHADOWSOCKS</option>
                         <option value="hy2">کانفیگ HYSTERIA2</option>
                         <option value="trojan">کانفیگ TROJAN</option>
-                        <option value="tuic">کانفیگ TUIC</option>
-                        <option value="warp">کانفیگ WARP</option>
+                        <!-- <option value="tuic">کانفیگ TUIC</option>
+                        <option value="warp">کانفیگ WARP</option> -->
                     </select>
-                    <select class="form-control" id="total">
+                    <select class="form-control none" id="total">
                         <option value="10">حداکثر ۱۰ مورد</option>
                         <option value="25" selected>حداکثر ۲۵ مورد</option>
                         <option value="50">حداکثر ۵۰ مورد</option>
                         <option value="all">همه موارد</option>
                     </select>
-                    <select class="form-control none" id="limit">
-                        <option value="lite">نسخه سبک</option>
+                    <select class="form-control" id="limit" disabled>
+                        <option value="lite" disabled>نسخه سبک</option>
                         <option value="full" selected>نسخه کامل</option>
                     </select>
                 </div>
                 <div class="betaVersion rangeSelector">
-                    <input type="radio" name="export" id="normal" value="1" checked />
+                    <input type="radio" name="export" id="normal" value="1" disabled />
                     <label for="normal">به‌صورت عادی</label>
                     <div class="clearfix"></div>
-                    <input type="radio" name="export" id="sub" value="1" />
+                    <input type="radio" name="export" id="sub" value="1" checked />
                     <label for="sub">لینک ساب</label>
                 </div>
                 <div class="clearfix"></div>
@@ -164,7 +164,7 @@
                         © توسط
                         <a href="https://github.com/ircfspace/tconfig" target="_blank">IRCF</a>،
                         به کمک
-                        <a href="https://github.com/yebekhe/TVC" target="_blank">YeBeKhe</a>
+                        <a href="https://github.com/itsyebekhe/HiN-VPN" target="_blank">YeBeKhe</a>
                         <br />
                         <span dir="ltr">
                             <a class="github-button" href="https://github.com/ircfspace/tconfig" data-color-scheme="no-preference: light; light: light; dark: dark;" data-icon="octicon-star" data-show-count="true" aria-label="Star ircfspace/tconfig on GitHub">Star</a>
@@ -176,7 +176,7 @@
                     <script src="./assets/js/jquery.min.js"></script>
                     <script src="./assets/js/bootstrap.min.js"></script>
                     <script src="./assets/js/slick-carousel_1.6.0.js"></script>
-                    <script src="./assets/js/script.js?v1.5"></script>
+                    <script src="./assets/js/script.js?v1.6"></script>
                     <script async defer src="https://buttons.github.io/buttons.js"></script>
                 </footer>
             </div>
