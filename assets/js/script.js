@@ -32,7 +32,7 @@ $(document).on('change', '#type, #limit', function(e) {
     $('#get').trigger('click');
 });
 
-let source = 'itsyebekhe/HiN-VPN';
+let source = 'soroushmirzaei/telegram-configs-collector';
 $(document).on('click', '#get', function(e) {
     e.preventDefault();
     let type = $('#type').val();
@@ -50,7 +50,7 @@ $(document).on('click', '#get', function(e) {
     let channel = {};
     if ( normal ) {
         if ( type === 'warp' ) {
-            config += "warp://auto#WarpInWarp ⭐️&&detour=warp://auto#Warp 🇮🇷";
+            config += "warp://auto/?ifp=10-20&ifps=10-20&ifpd=1-2&ifpm=m4#WarpInWarp ⭐️&&detour=warp://auto#Warp 🇮🇷";
             $('#result').removeClass('none');
             $('#get').html('دریافت کانفیگ');
             document.getElementById('get').disabled = false;
@@ -58,7 +58,7 @@ $(document).on('click', '#get', function(e) {
             return false;
         }
         let i = 0;
-        jQuery.get('https://raw.githubusercontent.com/'+source+'/main/api/allConfigs.json?v1.'+Date.now(), function(data) {
+        jQuery.get('https://raw.githubusercontent.com/'+source+'/main/splitted/mixed?v1.'+Date.now(), function(data) {
             data = JSON.parse(data);
             jQuery.each(data, function(index, item) {
                 channel[item.channel.username] = {
@@ -108,9 +108,18 @@ $(document).on('click', '#get', function(e) {
         if ( type === "warp" ) {
             config = 'https://raw.githubusercontent.com/ircfspace/warpsub/main/export/warp';
         }
+        else if ( type === "mix" ) {
+            config = 'https://raw.githubusercontent.com/'+source+'/main/splitted/mixed';
+        }
+        else if ( type === "ipv4" ) {
+            config = 'https://raw.githubusercontent.com/'+source+'/main/layers/ipv4';
+        }
+        else if ( type === "ipv6" ) {
+            config = 'https://raw.githubusercontent.com/'+source+'/main/layers/ipv6';
+        }
         else {
             //config = 'https://raw.githubusercontent.com/'+source+'/main/'+(limit === 'lite' ? 'lite/' : '')+'subscriptions/xray/normal/'+type;
-            config = 'https://raw.githubusercontent.com/'+source+'/main/subscription/normal/'+type;
+            config = 'https://raw.githubusercontent.com/'+source+'/main/protocols/'+type;
         }
         $('#qrcode img').attr('src', "https://quickchart.io/qr/?size=300x200&light=ffffff&text="+encodeURIComponent(config));
         $('#qrModal h4').html('QRCode ('+type+')');
