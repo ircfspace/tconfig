@@ -59,7 +59,9 @@ $(document).on('click', '#get', function(e) {
         }
         let i = 0;
         jQuery.get('https://raw.githubusercontent.com/'+source+'/main/splitted/mixed?v1.'+Date.now(), function(data) {
+            data = atob(data);
             data = JSON.parse(data);
+            console.log(data);
             jQuery.each(data, function(index, item) {
                 channel[item.channel.username] = {
                     title: item.channel.title,
