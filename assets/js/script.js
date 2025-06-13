@@ -110,6 +110,9 @@ $(document).on('click', '#get', function(e) {
         if ( type === "warp" ) {
             config = 'https://raw.githubusercontent.com/ircfspace/warpsub/main/export/warp';
         }
+        else if ( type === "serverless" ) {
+            config = 'https://raw.githubusercontent.com/GFW-knocker/gfw_resist_HTTPS_proxy/refs/heads/main/multiple_config.json';
+        }
         else if ( type === "mix" ) {
             config = 'https://raw.githubusercontent.com/'+source+'/main/splitted/mixed';
         }
